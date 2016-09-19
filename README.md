@@ -5,9 +5,9 @@ Well fernOS is far from being an OS and it still relies on BIOS routines but its
 
 Written in x86 assembly language it currently sits completely within the 512 byte bootloader.
 It is therefore quick to start and provides a terminal shell with a few (unhelpful) commands.
->    BOOT --- to reboot
-    HELP --- to list available commands
-    SAY ------ to output a message to the screen e.g. <em>SAY "Hello World"</em>
+>    BOOT --- to reboot  
+    HELP --- to list available commands  
+    SAY ------ to output a message to the screen e.g. <em>SAY "Hello World"</em>  
     WAIT --- to pause for a specified number of seconds e.g. <em>WAIT5</em>
 
 The shell is currently case insensitive and commands can be combined to form a script.
@@ -21,8 +21,7 @@ When I get time I'll look to add more.
 **Notes:**
 ---
 Compiled with:
->Geany> nasm -f bin -w+all -o %e.bin %f
-Bash> nasm -f bin -w+all -o fernOS.bin fernOS.asm
+> nasm -f bin -w+all -o fernOS.bin fernOS.asm
 
 Create a new disk image:
 >mkdosfs -C fernOS.img 1440
@@ -34,12 +33,12 @@ Format floppy disk with new image:
 >dd if=fernOS.img of=/dev/fd0
 
 Format USB memorystick with new image:
->dd if=fernOS.img of=/dev/sdb
+>dd if=fernOS.img of=/dev/sdb  
 *(CHECK IF /dev/sdb IS YOUR MEMORYSTICK and then CHECK AGAIN!)*
 
 ---
 **fernOS -- Version history (prior to github)**
 ---
-0.0.1 --- 10-May-2015 --- fernOS is born. Boots, keyboard input echoed to screen, new prompt with carriage return
-0.0.2 --- 16-May-2015 --- BIOS and UTIL libraries started, collects command line input for syntax checking
+0.0.1 --- 10-May-2015 --- fernOS is born. Boots, keyboard input echoed to screen, new prompt with carriage return  
+0.0.2 --- 16-May-2015 --- BIOS and UTIL libraries started, collects command line input for syntax checking  
 0.0.3 --- 31-May-2015 --- corrected input buffer overflow bug, no CR on a blank line and setting memory segments
