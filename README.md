@@ -10,7 +10,7 @@ It is therefore quick to start and provides a terminal shell with a few (unhelpf
     SAY ------ to output a message to the screen e.g. <em>SAY "Hello World"</em>  
     WAIT --- to pause for a specified number of seconds e.g. <em>WAIT5</em>
 
-The shell is currently case insensitive and commands can be combined to form a script.
+The shell is currently case insensitive and commands can be combined to form a script.  
 e.g. fernOS><em>say"this system will reboot in 9 seconds" wait4 say"goodbye" wait5  boot</em>
 
 See www.benningtons.net for more information about fernOS

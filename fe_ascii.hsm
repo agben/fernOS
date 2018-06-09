@@ -1,0 +1,11 @@
+;********************************************************************
+;*	ASCII header definitions for fernOS								*
+;*	More details at www.benningtons.net								*
+;********************************************************************
+
+	%define ASCII_NL	0				;null
+	%define ASCII_BS	8				;back space
+	%define ASCII_LF	10				;line feed
+	%define ASCII_CR	13				;carriage return
+	%define ASCII_SP	32				;space
+	%define ASCII_DQ	34				;double quotes

@@ -4,17 +4,19 @@
 ;*	written, and no doubt re-written, as I learn.					*
 ;*						www.benningtons.net							*
 ;*	with grateful thanks to the tutorials by Mike Saunders in LXF	*
-;*			and the far better Linux Voice magazines.				*
+;*			and the far better Linux Voice magazine.				*
 ;********************************************************************
 
 ; Compiler settings and parameters
 	BITS 16								;Set nasm to 16-bit mode - required for bootloaders
-	ASCII_NL	equ 0					;null
-	ASCII_BS	equ 8					;back space
-	ASCII_LF	equ 10					;line feed
-	ASCII_CR	equ 13					;carriage return
-	ASCII_SP	equ 32					;space
-	ASCII_DQ	equ 34					;double quotes
+
+	%include "fe_ascii.hsm"				; ASCII definitions
+;	ASCII_NL	equ 0					;null
+;	ASCII_BS	equ 8					;back space
+;	ASCII_LF	equ 10					;line feed
+;	ASCII_CR	equ 13					;carriage return
+;	ASCII_SP	equ 32					;space
+;	ASCII_DQ	equ 34					;double quotes
 
 Section .text							;protected code area
 

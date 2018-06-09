@@ -9,6 +9,7 @@
 ;	UTIL_str_cmp		Compare two strings
 ;	UTIL_upper			Convert a char to uppercase
 
+	%include "fe_ascii.hsm"		; ASCII definitions
 
 ;***************************************Convert a number into an ASCII string
 ;* currently commented out to fit fernOS into the bootloader but was useful for debugging
