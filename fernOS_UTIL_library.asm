@@ -1,23 +1,26 @@
-;********************************************************************
-;*					fernOS_UTIL_library								*
-;*	x86 assembly code general utilities for fernOS			 		*
-;*					www.benningtons.net								*
-;********************************************************************
+;-------------------------------------------------------------------
+;					fernOS_UTIL_library
+;	x86 assembly code general utilities for fernOS
+;					www.benningtons.net
+;-------------------------------------------------------------------
 ;
 ;LIST OF FUNCTIONS:
 ;	UTIL_num_to_str		Convert a number into an ASCII string
 ;	UTIL_str_cmp		Compare two strings
 ;	UTIL_upper			Convert a char to uppercase
 
-	%include "fe_ascii.hsm"		; ASCII definitions
-
-;***************************************Convert a number into an ASCII string
-;* currently commented out to fit fernOS into the bootloader but was useful for debugging
-;In: ax=number to convert, di=pointer to output string
-;Out: [di] memory
-;Destroyed: none
 
 ;UTIL_num_to_str:
+;-------------------------------------------------------------------
+;Convert a number into an ASCII string
+; currently commented out to fit fernOS into the bootloader but was useful for debugging
+;In: ax, di Out: [di] Destroyed: none
+;	In: ax=number to convert, di=pointer to output string
+;	Out: [di] memory
+;-------------------------------------------------------------------
+
+;	%include "fe_ascii.hsm"		; ASCII definitions
+
 ;	pusha								;preserve registers
 ;	mov		bx, 10						;Base of the decimal system
 ;	mov		cx, 0						;Number of digits generated
@@ -43,12 +46,16 @@
 ;	ret
 
 
-;***************************************Compare two strings
-;In: si=pointer to string1, di=pointer to string2
-;Out: ax=-1 (s1<s2), ax=0 (match), ax=1 (s1>s2)
-;Destroyed: (si-1) and di left pointing to 1st mismatch or end of strings
-
 UTIL_str_cmp:
+;-------------------------------------------------------------------
+;Compare two strings
+;In: si, di Out: ax Destroyed: (si-1), di
+;	In: si=pointer to string1, di=pointer to string2
+;	Out: ax=-1 (s1<s2), ax=0 (match), ax=1 (s1>s2)
+;	Destroyed: (si-1) and di left pointing to 1st mismatch or end of strings
+;-------------------------------------------------------------------
+
+	%include "fe_ascii.hsm"		; ASCII definitions
 
 .loop:
 	lodsb								;move [si] into ax and inc si
@@ -73,12 +80,14 @@ UTIL_str_cmp:
 	ret
 
 
-;***************************************Convert a char to uppercase
-;In: al=ASCII char to convert
-;Out: al=uppercase ASCII char
-;Destroyed: none
-
 UTIL_upper:
+;-------------------------------------------------------------------
+;Convert a char to uppercase
+;In: al Out: al Destroyed: none
+;	In: al=ASCII char to convert
+;	Out: al=uppercase ASCII char
+;-------------------------------------------------------------------
+
 	cmp		al, 'a'
 	jl		.end					;below ASCII 'a' so no conversion applied
 	cmp		al, 'z'

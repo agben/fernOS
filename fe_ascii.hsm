@@ -1,7 +1,7 @@
-;********************************************************************
-;*	ASCII header definitions for fernOS								*
-;*	More details at www.benningtons.net								*
-;********************************************************************
+;-------------------------------------------------------------------
+;	ASCII header definitions for fernOS
+;	More details at www.benningtons.net
+;-------------------------------------------------------------------
 
 	%define ASCII_NL	0				;null
 	%define ASCII_BS	8				;back space
